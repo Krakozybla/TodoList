@@ -44,6 +44,14 @@ const fillHTML = () =>{
         taskContainer.innerHTML += createTemplates(item, index);
     })
     upDateLocalStorage();
+    let taskList = document.querySelectorAll('.task-list');
+    taskList.forEach(el=>{
+        if(el.hasAttribute('checked')){
+            el.classList.add('checked-item');
+        }else{
+            el.classList.remove('checked-item');
+        }
+    })
 }
 
 const  upDateLocalStorage = () =>{
